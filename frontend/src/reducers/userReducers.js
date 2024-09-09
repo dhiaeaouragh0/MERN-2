@@ -79,7 +79,7 @@ export const authReducer = (state = {user:{}},action) => {
                 user:null,
                 // error: action.payload
             }
-        case CLEAR_ERRORS:
+        case CLEAR_ERRORS: 
             return {
                 ...state,
                 error: null

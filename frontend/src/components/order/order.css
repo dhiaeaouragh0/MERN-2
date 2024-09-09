@@ -1,0 +1,177 @@
+/* Style général pour la table */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    overflow-x: auto; /* Pour permettre le défilement horizontal si nécessaire */
+}
+
+/* En-tête de la table */
+.table thead th {
+    background-color: #343a40;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-top: none;
+    border-bottom: 2px solid #6c757d;
+    border-right: none;
+}
+
+/* Corps de la table */
+.table tbody tr {
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table tbody td {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #343a40;
+    border-top: none;
+    border-bottom: none;
+}
+
+/* Style pour les bordures */
+.table-bordered {
+    border: none;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border-right: none;
+    border-left: none;
+}
+
+/* Style pour les boutons d'action */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour les icônes */
+.fa-eye {
+    margin-right: 5px;
+}
+
+/* Style pour le texte du titre */
+.mt-5 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Style général */
+.px-3 {
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Style pour les statuts */
+.status-delivered {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.white{
+    display: flex;
+    color: white;
+    font-size: 2rem;
+    justify-content: center;
+}
+.order-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+}
+.ordersD{
+    width: 80%;
+}
+.hr-white{
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+    width: auto;
+    border: 0.1px solid white;
+    margin: 0;
+}
+.test-width{
+    width: 220px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .table thead {
+        display: none; /* Cacher l'en-tête sur les petits écrans */
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tbody tr {
+        margin-bottom: 15px;
+        box-shadow: none; /* Retirer les ombres sur mobile */
+        border-radius: 0;
+    }
+
+    .table tbody td {
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .table tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: calc(100% - 20px);
+        padding-right: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+        text-align: center;
+        margin-top: 10px;
+    }
+}

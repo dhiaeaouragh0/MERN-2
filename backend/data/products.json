@@ -1,0 +1,162 @@
+[
+    {
+      "name": "Apple iPhone 13",
+      "price": 799.99,
+      "description": "The latest iPhone with A15 Bionic chip, 6.1-inch Super Retina XDR display, and advanced dual-camera system.",
+      "rating": 4.7,
+      "image": [
+        {
+          "public_id": "iphone_13_front",
+          "url": "https://www.clove-technology.com/cdn/shop/products/iphone-13-mini-starlight-front_1200x.jpg?v=1665065094"
+        },
+        {
+          "public_id": "iphone_13_back",
+          "url": "https://iphonespecialist.co.uk/wp-content/uploads/2023/02/iPhone-13-rear-glass-replacement.jpg"
+        }
+      ],
+      "category": "Electronics",
+      "stock": 120,
+      "seller": "Apple Store",
+      "numOfReviews": 215,
+      "reviews": [
+        {
+          "user": "john_doe",
+          "rating": 5,
+          "comment": "Amazing phone with excellent features and battery life."
+        },
+        {
+          "user": "jane_smith",
+          "rating": 4,
+          "comment": "Great phone but a bit pricey."
+        }
+      ],
+      "createdAt": "2023-09-15T10:00:00Z"
+    },
+    {
+      "name": "Nike Air Max 270",
+      "price": 150.00,
+      "description": "Nike Air Max 270 with the largest heel Air unit yet for a soft, comfortable ride.",
+      "rating": 4.5,
+      "image": [
+        {
+          "public_id": "nike_air_max_270_1",
+          "url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/209889d9-4910-4f06-9d07-18afa558b566/chaussures-air-max-270-pour-Kqzbp7.png"
+        },
+        {
+          "public_id": "nike_air_max_270_2",
+          "url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/kncr6f3jysl34ejmk7xp/chaussure-air-max-270-pour-ado-NQdG8D.png"
+        }
+      ],
+      "category": "Sprots",
+      "stock": 80,
+      "seller": "Nike Store",
+      "numOfReviews": 150,
+      "reviews": [
+        {
+          "user": "michael_jordan",
+          "rating": 5,
+          "comment": "Super comfortable and stylish. Perfect for running."
+        },
+        {
+          "user": "serena_williams",
+          "rating": 4,
+          "comment": "Love the design but wish it had more color options."
+        }
+      ],
+      "createdAt": "2023-08-20T14:00:00Z"
+    },
+    {
+      "name": "Harry Potter and the Philosopher's Stone",
+      "price": 19.99,
+      "description": "The first book in the Harry Potter series by J.K. Rowling, introducing the magical world and its beloved characters.",
+      "rating": 4.9,
+      "image": [
+        {
+          "public_id": "harry_potter_book_1",
+          "url": "https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg"
+        }
+      ],
+      "category": "Books",
+      "stock": 200,
+      "seller": "Book World",
+      "numOfReviews": 320,
+      "reviews": [
+        {
+          "user": "hermione_granger",
+          "rating": 5,
+          "comment": "An enchanting start to an amazing series!"
+        },
+        {
+          "user": "ron_weasley",
+          "rating": 5,
+          "comment": "Loved every page of it. A must-read for everyone."
+        }
+      ],
+      "createdAt": "2023-07-10T10:00:00Z"
+    },{
+        "name": "Samsung Galaxy S21",
+        "price": 699.99,
+        "description": "The Samsung Galaxy S21 with a 6.2-inch display, Exynos 2100 processor, and triple-camera setup.",
+        "rating": 4.6,
+        "image": [
+          {
+            "public_id": "galaxy_s21_front",
+            "url": "https://i5.walmartimages.com/asr/01e1b359-8cf8-4ae5-a5ac-a6601472059a.48693bfb785e5a858c849485f0fe247d.jpeg"
+          },
+          {
+            "public_id": "galaxy_s21_back",
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUpuUFj9nAqojZ3QPupSu9mbYWaj1NdAJ2A&s"
+          }
+        ],
+        "category": "Electronics",
+        "stock": 150,
+        "seller": "Samsung Store",
+        "numOfReviews": 180,
+        "reviews": [
+          {
+            "user": "alex_jones",
+            "rating": 5,
+            "comment": "Fantastic phone with great performance and camera quality."
+          },
+          {
+            "user": "emma_watson",
+            "rating": 4,
+            "comment": "Love the phone, but the battery life could be better."
+          }
+        ],
+        "createdAt": "2023-10-05T08:00:00Z"
+      },
+      {
+        "name": "Sony WH-1000XM4",
+        "price": 349.99,
+        "description": "Industry-leading noise canceling headphones with premium sound quality and comfortable design.",
+        "rating": 4.8,
+        "image": [
+          {
+            "public_id": "sony_wh1000xm4_1",
+            "url": "https://i5.walmartimages.com/asr/25f5b4fd-9021-462a-82a3-cce8c89173f8.ec6240c7a97f75532e2f00022e1bb532.jpeg"
+          },
+          {
+            "public_id": "sony_wh1000xm4_2",
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhd2DhoDdFVqc2Ba0Yw7VL5D3Q-bUWfsxTQQ&s"
+          }
+        ],
+        "category": "Electronics",
+        "stock": 60,
+        "seller": "Sony Store",
+        "numOfReviews": 220,
+        "reviews": [
+          {
+            "user": "mark_lee",
+            "rating": 5,
+            "comment": "The best noise-canceling headphones I've ever used."
+          },
+          {
+            "user": "sarah_connor",
+            "rating": 4,
+            "comment": "Amazing sound quality, but a bit pricey."
+          }
+        ],
+        "createdAt": "2023-11-20T12:00:00Z"
+      }
+    ]

@@ -1,0 +1,277 @@
+.gpt3__navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem ;
+}
+
+.gpt3__navbar-links{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gpt3__navbar-links_logo{
+
+}
+
+.gpt3__navbar-links_logo img{
+    width: 120px;
+    height: 50px;
+}
+.gpt3__navbar-links_container{
+    display: flex;
+    flex-direction: row;
+}
+.gpt3__navbar-sign{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.gpt3__navbar-links_container p,
+.gpt3__navbar-sign p,
+.gpt3__navbar-menu_container p{
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: capitalize;
+
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.gpt3__navbar-sign button,
+.gpt3__navbar-menu_container button{
+    padding: 0.6rem 1.2rem;
+    color: #fff;
+    background: #FF4820;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.gpt3__navbar-menu{
+    margin-left: 1rem;
+    display: none;
+    position: relative;
+}
+
+.gpt3__navbar-menu svg{
+    cursor: pointer;
+}
+
+.gpt3__navbar-menu_container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: center;
+    background: var(--color-footer);
+    padding: 2rem;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+}
+.gpt3__navbar-menu_container p {
+    margin: 1rem 0;
+}
+
+.gpt3__navbar-menu_container-links-sign{
+    display: none;
+}
+.hide-bare{
+    display: none;
+}
+
+
+.bare-recharche{
+    height: 35px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px ;
+    background: #fff;
+    margin-right: 3rem;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+.bare-recharche:hover input,
+.bare-recharche input:focus {
+  width: 300px; /* Ajustez selon vos besoins */
+}
+.bare-recharche input{
+    width: 0px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+}
+
+.bare-recharche button .fa{
+    color:var(--color-footer);
+    font-size: 20px;
+}
+
+
+/* Ajout de styles pour le dropdown utilisateur */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .user-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  }
+  
+  .user-dropdown .dropdown-menu.show {
+    display: block;
+  }
+  
+  /* Styles pour le bouton du dropdown */
+  .btn.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 30px;
+  }
+  
+  .avatar-nav img.rounded-circle {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+  
+  .btn.dropdown-toggle span {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: transparent;
+  }
+  #test{
+    color: black;
+    background-color: #fff;
+  }
+  figure{
+    margin: 0;
+  }
+
+  .cart-link {
+    text-decoration: none;
+    color: inherit; /* Conserve la couleur du texte actuelle */
+}
+
+.cart-count {
+    background-color: red;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+
+
+
+@media screen and (max-width:1250px){
+    .bare-recharche:hover input,
+    .bare-recharche input:focus {
+    width: 150px; /* Ajustez selon vos besoins */
+    }
+}
+@media screen and (max-width:1100px){
+    .gpt3__navbar-links_container{
+        display: none;
+    }
+    .gpt3__navbar-menu{
+        display: flex;
+        position: relative; /* Assurez-vous que le menu a une position relative ou absolue */
+        z-index: 100;
+    }
+    .bare-recharche:hover input,
+    .bare-recharche input:focus {
+    width: 140px; /* Ajustez selon vos besoins */
+    }
+    .products-heading-container {
+        width: 100%;
+        text-align: center;
+      }
+    .gpt3__navbar-menu_container {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:750px){
+    .gpt3__navbar{
+        padding: 2rem 4rem;
+    }
+    .bare-rech{
+        display: none;
+    }
+    .hide-bare{
+        display: flex;
+    }
+    .bare-recharche{
+        margin-right: 0;
+    }
+    #search_btn{
+        background: transparent;
+    }
+    .gpt3__navbar-menu_container{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:550px){
+    .gpt3__navbar{
+        padding: 2rem;
+    }
+    .gpt3__navbar-sign{
+        display: none;
+    }
+
+    .gpt3__navbar-menu_container{
+        text-align: center;
+        top: 20;
+    }
+    .gpt3__navbar-menu_container-links-sign{
+        display: block;
+    }
+    .btn.dropdown-toggle{
+        margin: 0;
+    }
+}

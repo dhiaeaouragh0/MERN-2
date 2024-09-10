@@ -28,6 +28,7 @@ import OrderDetails from './components/order/OrderDetails';
 //Admin imports
 import Dashboard from './components/admin/Dashboard';
 import ProductsList from './components/admin/ProductsList';
+import NewProduct from './components/admin/NewProduct';
 
 
 
@@ -71,6 +72,7 @@ function App() {
 
           <Route path="/dashboard" element={<ProtectedRoute isAdmin={true}> <Dashboard /> </ProtectedRoute>} exact />
           <Route path="/admin/products" element={<ProtectedRoute isAdmin={true}> <ProductsList /></ProtectedRoute>}exact/>
+          <Route path="/admin/products/new" element={<ProtectedRoute isAdmin={true}> <NewProduct /></ProtectedRoute>}exact/>
 
 
         </Routes>

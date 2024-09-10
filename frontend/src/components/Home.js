@@ -25,7 +25,7 @@ const Home = () => {
   const [maxRating, setMaxRating] = useState(rating[1]);
   const [category, setCategory] = useState('');
 
-  const categories = ['Electronics', 'Clothing', 'Books', 'Toys','Sprots', 'Home', 'Other']
+  const categories = ['Electronics', 'Clothing', 'Books', 'Toys','Sports', 'Home', 'Other']
 
 
   const applyFilters = () => {

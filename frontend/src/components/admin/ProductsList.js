@@ -98,12 +98,14 @@ const ProductsList = () => {
                     <h3>PRODUCTS</h3>
                 </div>
                 <div className='p48 main-cards'>
-                    <div className='card'>
-                        <div className='card-inner'>
-                            <h3>ADD</h3>
-                            <BsPlusCircle  className='card_icon' />
+                    <Link to={'/admin/products/new'}>
+                        <div className='card'>
+                            <div className='card-inner'>
+                                <h3>ADD</h3>
+                                <BsPlusCircle  className='card_icon' />
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                     <div className='card'>
                         <div className='card-inner'>
                             <h3>EDIT</h3>

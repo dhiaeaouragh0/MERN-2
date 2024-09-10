@@ -12,6 +12,9 @@ import {
   ADMIN_PRODUCTS_REQUEST,
   ADMIN_PRODUCTS_SUCCESS,
   ADMIN_PRODUCTS_FAIL,
+  NEW_PRODUCT_REQUEST,
+  NEW_PRODUCT_SUCCESS,
+  NEW_PRODUCT_FAIL,
   CLEAR_ERRORS
 } from '../constants/productConstants';
 
@@ -81,6 +84,37 @@ export const productDetailsReducer = (state = { product: {} }, action) => {
           return state;
   }
 };
+
+export const newProductReducer = (state = {product : {}}, action) => {
+    switch (action.type) {
+        case NEW_PRODUCT_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            };
+        case NEW_PRODUCT_SUCCESS:
+            return {
+                ...state,  // Propagation de l'état pour ne pas écraser d'autres parties
+                loading: false,
+                success: action.payload.success,
+                product: action.payload.product,
+            };
+        case NEW_PRODUCT_FAIL:
+            return {
+                ...state,  // Garde les autres parties de l'état inchangées
+                loading: false,
+                error: action.payload,
+            };
+        case CLEAR_ERRORS:
+            return {
+                ...state,  // Propagation de l'état pour conserver les autres informations
+                error: null,
+            };
+        default:
+            return state;
+    }
+};
+
 
 export const newReviewReducer = (state = {}, action) => {
     switch (action.type) {

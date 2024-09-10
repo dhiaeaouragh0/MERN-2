@@ -81,7 +81,7 @@ const ListOrders = () => {
         {loading? <Loader /> : (
             <MDBDataTable
                 data={setOrders()}
-                className='px-3'
+                className='table-product'
                 bordered
                 striped
                 hover

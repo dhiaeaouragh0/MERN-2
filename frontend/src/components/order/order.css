@@ -125,8 +125,12 @@
     width: 220px;
 }
 
-
-
+.dataTables_info{
+    color: white;
+}
+.dataTables_length label{
+    color: white;
+}
 
 
 
@@ -135,19 +139,15 @@
 
 
 /* Responsivité */
-@media (max-width: 768px) {
-    .table thead {
-        display: none; /* Cacher l'en-tête sur les petits écrans */
-    }
-
-    .table, .table tbody, .table tr, .table td {
-        display: block;
-        width: 100%;
+/* @media (max-width: 768px) {
+    .table,.table thead, .table tbody, .table tr, .table td {
+        display: flex;
+        flex-direction: column;
     }
 
     .table tbody tr {
         margin-bottom: 15px;
-        box-shadow: none; /* Retirer les ombres sur mobile */
+        box-shadow: none; 
         border-radius: 0;
     }
 
@@ -170,8 +170,8 @@
     }
 
     .btn-primary {
-        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+        width: 100%; 
         text-align: center;
         margin-top: 10px;
     }
-}
+} */

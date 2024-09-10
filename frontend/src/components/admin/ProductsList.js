@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAdminProducts , clearErrors} from '../../actions/productActions';
 import { useAlert } from 'react-alert';
 import '../order/order.css'
+import './admin.css'
 import Sidebar from './Sidebar';
 // import { useNavigate } from 'react-router-dom';
 import { 
@@ -63,13 +64,16 @@ const ProductsList = () => {
                 price: `${product.price} DA`,
                 stock: product.stock,
                 actions: (<Fragment>
-                        <Link to={`/admin/product/${product._id}`} className='btn btn-primary py-1 px-2'>
-                            <i className='fa fa-pencil'></i>
+                    <div className="sorting_asc">
+                        <Link to={`/admin/product/${product._id}`} className='btn btn-darkblue py-1 px-2'>
+                            <BsPencil  className='card_icon' />
                         </Link>
-                        <button className='btn btn-danger py-1 px-2 ml-2'>
-                            <i className='fa fa-trash'></i>
+                        <button className='btn btn-darkblue py-1 px-2 ml-2'>
+                            <BsTrash className='card_icon' />
                         </button>
-                        </Fragment>
+                    </div>    
+                    </Fragment>
+                        
                 )       
             })
         })
@@ -124,7 +128,7 @@ const ProductsList = () => {
                 {loading? <Loader /> : (
                     <MDBDataTable
                         data={setProducts()}
-                        className='px-3'
+                        className='table-product'
                         bordered
                         striped
                         hover

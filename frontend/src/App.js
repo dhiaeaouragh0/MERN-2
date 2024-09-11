@@ -1,7 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+
+import { useSelector } from 'react-redux';
+
+
+
+
+
 import Footer from './components/layout/Footer';
 import Navbar from './components/navbar/Navbar';
+
 
 import Home from './components/Home';
 import ProductDetails from './components/product/ProductDetails';
@@ -43,6 +51,8 @@ function App() {
     store.dispatch(loadUser());
   }, []);
 
+  const { user , loading } = useSelector(state => state.auth)
+
   return (
     <Router>
       <div className="App">
@@ -77,7 +87,10 @@ function App() {
 
         </Routes>
 
-        <Footer />
+        {!loading && user.role !== 'admin' &&(
+          <Footer />
+        )}
+        
       </div>
     </Router>
   );

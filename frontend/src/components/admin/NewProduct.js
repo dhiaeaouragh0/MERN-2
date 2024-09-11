@@ -5,7 +5,7 @@ import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { newProduct, clearErrors } from '../../actions/productActions';
 import { useNavigate } from 'react-router-dom';
-import { NEW_REVIEW_RESET } from '../../constants/productConstants';
+import { NEW_PRODUCT_RESET } from '../../constants/productConstants';
 import Carousel from '../product/Carousel'; // Import Carousel
 
 const NewProduct = () => {
@@ -21,6 +21,7 @@ const NewProduct = () => {
     const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([]);
+    
 
     const categories = ['Electronics', 'Clothing', 'Books', 'Toys', 'Sports', 'Home', 'Other'];
 
@@ -35,7 +36,7 @@ const NewProduct = () => {
         if (success) {
             navigate('/admin/products');
             alert.success('Product added successfully');
-            dispatch({ type: NEW_REVIEW_RESET });
+            dispatch({ type: NEW_PRODUCT_RESET });
         }
     }, [dispatch, alert, error, success, navigate]);
 
@@ -56,16 +57,13 @@ const NewProduct = () => {
     const onChange = e => {
         const files = Array.from(e.target.files);
 
-        setImagesPreview([]);
-        setImages([]);
-
         files.forEach(file => {
             const reader = new FileReader();
 
             reader.onload = () => {
                 if (reader.readyState === 2) {
                     setImagesPreview(oldArray => [...oldArray, reader.result]);
-                    setImages(oldArray => [...oldArray, file]);
+                    setImages(oldArray => [...oldArray, reader.result]);
                 }
             };
             reader.readAsDataURL(file);

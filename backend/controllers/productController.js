@@ -3,25 +3,58 @@ const Product = require('../models/product')
 const ErrorHandler = require('../utils/errorHandler')
 const catchAsyncErrors = require('../middlewares/catchAsyncError');
 const APIFeatures = require('../utils/apiFeatures');
+const cloudinary = require('cloudinary');
 
 //Create new product => /api/vi/admin/product/new
-exports.newProduct = catchAsyncErrors(async (req,res,next) => {
+exports.newProduct = catchAsyncErrors(async (req, res, next) => {
+    let images = [];
 
+    if (typeof req.body.images === 'string') {
+        images.push(req.body.images);
+    } else {
+        images = req.body.images;
+    }
+
+    let imagesLinks = [];
+    
+    for (let i = 0; i < images.length; i++) {
+        try {
+            const result = await cloudinary.v2.uploader.upload(images[i], {
+                folder: 'products',
+                width: 500,
+                crop: 'scale'
+            });
+            console.log('Upload result:', result); // Log result from Cloudinary
+            imagesLinks.push({
+                public_id: result.public_id,
+                url: result.secure_url
+            });
+        } catch (error) {
+            console.error('Cloudinary upload error:', error);
+            return res.status(500).json({
+                success: false,
+                message: 'Image upload failed',
+            });
+        }
+    }
+
+    req.body.images = imagesLinks;
     req.body.user = req.user.id;
 
-    const product = await Product.create(req.body)
-    
-        res.status(201).json({
-            success: true,
-            product
-        })
-})
+    const product = await Product.create(req.body);
+
+    res.status(201).json({
+        success: true,
+        product
+    });
+});
+
 
 //Get all products => /api/vi/products
 exports.getProducts = catchAsyncErrors(async (req,res,next) => {
 
     // return next(new ErrorHandler('My test error',400))
-    const resPerPage = 4;
+    const resPerPage = 9;
     const productCount = await Product.countDocuments();
 
     const apiFeatures = new APIFeatures(Product.find(),req.query) 

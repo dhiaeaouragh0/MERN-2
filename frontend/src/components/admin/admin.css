@@ -28,7 +28,7 @@
     grid-template-areas:
       'sidebar header header header'
       'sidebar main main main';
-    height: 100vh;
+    min-height: 88vh;
     margin-bottom: -160px;
   }
   
@@ -50,7 +50,7 @@
 /* Sidebar  */
 #sidebar {
     grid-area: sidebar;
-    height: 100%;
+    min-height: 100%;
     background-color: var(--color-bg);
     overflow-y: auto;
     transition: all 0.5s;

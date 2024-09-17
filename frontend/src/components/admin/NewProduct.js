@@ -7,6 +7,7 @@ import { newProduct, clearErrors } from '../../actions/productActions';
 import { useNavigate } from 'react-router-dom';
 import { NEW_PRODUCT_RESET } from '../../constants/productConstants';
 import Carousel from '../product/Carousel'; // Import Carousel
+import Compressor from 'compressorjs';
 
 const NewProduct = () => {
     const alert = useAlert();
@@ -70,6 +71,8 @@ const NewProduct = () => {
         });
     };
 
+
+
     return (
         <Fragment>
             <MetaData title={"New Product"} />
@@ -79,89 +82,100 @@ const NewProduct = () => {
                     <div className='main-title'>
                         <h3>NEW PRODUCT</h3>
                     </div>
-                    <div className='p48 main-cards'>
-                        <form encType='multipart/form-data' onSubmit={submitHandler}>
-                            <div className='form-group'>
-                                <label htmlFor='name'>Name</label>
-                                <input
-                                    type='text'
-                                    id='name'
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='price'>Price</label>
-                                <input
-                                    type='number'
-                                    id='price'
-                                    value={price}
-                                    onChange={(e) => setPrice(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='description'>Description</label>
-                                <textarea
-                                    id='description'
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='category'>Category</label>
-                                <select
-                                    id='category'
-                                    value={category}
-                                    onChange={(e) => setCategory(e.target.value)}
-                                    required
-                                >
-                                    <option value=''>Select Category</option>
-                                    {categories.map(cat => (
-                                        <option key={cat} value={cat}>{cat}</option>
+                    <div className='p48 '>
+                        <div className="full-page">
+                            <div className="images_details">
+                                {/* <Carousel autoSlide={false}>
+                                    {imagesPreview.map((s) => s)}
+                                </Carousel> */}
+                                <Carousel autoSlide={false}>
+                                    {imagesPreview.map((img, index) => (
+                                        <img key={index} src={img} alt={`Preview ${index}`} className='fixed-image' />
                                     ))}
-                                </select>
+                                </Carousel>
                             </div>
-                            <div className='form-group'>
-                                <label htmlFor='stock'>Stock</label>
-                                <input
-                                    type='number'
-                                    id='stock'
-                                    value={stock}
-                                    onChange={(e) => setStock(e.target.value)}
-                                    required
-                                />
+
+                            <div className='product_details'>
+                                <form encType='multipart/form-data' onSubmit={submitHandler}>
+                                    <div className='form-group'>
+                                        <label htmlFor='name'>Name</label>
+                                        <input
+                                            type='text'
+                                            id='name'
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className='form-group'>
+                                        <label htmlFor='price'>Price</label>
+                                        <input
+                                            type='number'
+                                            id='price'
+                                            value={price}
+                                            onChange={(e) => setPrice(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className='form-group'>
+                                        <label htmlFor='description'>Description</label>
+                                        <textarea
+                                            id='description'
+                                            value={description}
+                                            onChange={(e) => setDescription(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className='form-group'>
+                                        <label htmlFor='category'>Category</label>
+                                        <select
+                                            id='category'
+                                            value={category}
+                                            onChange={(e) => setCategory(e.target.value)}
+                                            required
+                                        >
+                                            <option value=''>Select Category</option>
+                                            {categories.map(cat => (
+                                                <option key={cat} value={cat}>{cat}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div className='form-group'>
+                                        <label htmlFor='stock'>Stock</label>
+                                        <input
+                                            type='number'
+                                            id='stock'
+                                            value={stock}
+                                            onChange={(e) => setStock(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className='form-group'>
+                                        <label htmlFor='seller'>Seller</label>
+                                        <input
+                                            type='text'
+                                            id='seller'
+                                            value={seller}
+                                            onChange={(e) => setSeller(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className='form-group'>
+                                        <label htmlFor='images'>Images</label>
+                                        <input
+                                            type='file'
+                                            id='images'
+                                            multiple
+                                            onChange={onChange}
+                                        />
+                                    </div>
+                                    <button type='submit' disabled={loading}>Create Product</button>
+                                </form>
                             </div>
-                            <div className='form-group'>
-                                <label htmlFor='seller'>Seller</label>
-                                <input
-                                    type='text'
-                                    id='seller'
-                                    value={seller}
-                                    onChange={(e) => setSeller(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='images'>Images</label>
-                                <input
-                                    type='file'
-                                    id='images'
-                                    multiple
-                                    onChange={onChange}
-                                />
-                                {imagesPreview.length > 0 && (
-                                    <Carousel autoSlide={false}>
-                                        {imagesPreview.map((img, index) => (
-                                            <img key={index} src={img} alt={`Preview ${index}`} />
-                                        ))}
-                                    </Carousel>
-                                )}
-                            </div>
-                            <button type='submit' disabled={loading}>Create Product</button>
-                        </form>
+                            
+                        </div>
+
+                        
                     </div>
                 </main>
             </div>

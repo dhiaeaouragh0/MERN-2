@@ -87,9 +87,10 @@ function App() {
 
         </Routes>
 
-        {!loading && user.role !== 'admin' &&(
+        {!loading && (!user || user.role !== 'admin') && (
           <Footer />
         )}
+
         
       </div>
     </Router>

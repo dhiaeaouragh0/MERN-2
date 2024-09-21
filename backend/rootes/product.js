@@ -13,7 +13,7 @@ router.route('/admin/products').get(getAdminProducts);
 router.route('/product/:id').get(getSingleProduct);
 
 router.route('/admin/products/new').post(isAuthenticatedUser,authorizeRoles('admin'),newProduct);
-router.route('/admin/products/:id')
+router.route('/admin/product/:id')
                     .put(isAuthenticatedUser,authorizeRoles('admin'),updateProduct)
                     .delete(isAuthenticatedUser,authorizeRoles('admin'),deleteProduct);
 

@@ -7,7 +7,6 @@ import { newProduct, clearErrors } from '../../actions/productActions';
 import { useNavigate } from 'react-router-dom';
 import { NEW_PRODUCT_RESET } from '../../constants/productConstants';
 import Carousel from '../product/Carousel'; // Import Carousel
-import Compressor from 'compressorjs';
 
 const NewProduct = () => {
     const alert = useAlert();
@@ -165,6 +164,7 @@ const NewProduct = () => {
                                         <input
                                             type='file'
                                             id='images'
+                                            accept='.jpg, .jpeg, .png'  
                                             multiple
                                             onChange={onChange}
                                         />

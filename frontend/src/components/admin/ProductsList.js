@@ -1,14 +1,15 @@
 import React, { Fragment ,useEffect ,useState} from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import {MDBDataTable} from 'mdbreact';
 import MetaData from '../layout/MetaData';
 import Loader from '../layout/Loader';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAdminProducts , clearErrors} from '../../actions/productActions';
+import { getAdminProducts,deleteProduct , clearErrors} from '../../actions/productActions';
 import { useAlert } from 'react-alert';
 import '../order/order.css'
 import './admin.css'
 import Sidebar from './Sidebar';
+import { DELETE_PRODUCT_RESET } from '../../constants/productConstants';
 // import { useNavigate } from 'react-router-dom';
 import { 
     BsPlusCircle , 
@@ -20,9 +21,11 @@ import {
 const ProductsList = () => {
     const alert = useAlert();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     // const navigat = useNavigate();
 
     const { loading, error, products } = useSelector((state) => state.products);
+    const {error:deleteError,isDeleted} = useSelector((state) => state.product)
 
     useEffect(() => {
         dispatch(getAdminProducts());
@@ -30,7 +33,16 @@ const ProductsList = () => {
             alert.error(error);
             dispatch(clearErrors());
         }
-    }, [dispatch, alert, error]);
+        if(deleteError){
+            alert.error(deleteError);
+            dispatch(clearErrors());
+        }
+        if(isDeleted){
+            alert.success('Product deleted successfully');
+            navigate('/admin/products');
+            dispatch({type: DELETE_PRODUCT_RESET});
+        }
+    }, [dispatch, alert, error,deleteError,isDeleted,navigate]);
 
     const setProducts = () => {
         const data = {
@@ -68,7 +80,8 @@ const ProductsList = () => {
                         <Link to={`/admin/product/${product._id}`} className='btn btn-darkblue py-1 px-2'>
                             <BsPencil  className='card_icon' />
                         </Link>
-                        <button className='btn btn-darkblue py-1 px-2 ml-2'>
+                        <button className='btn btn-darkblue py-1 px-2 ml-2' 
+                        onClick={() => deleteProductHandler(product._id)}>
                             <BsTrash className='card_icon' />
                         </button>
                     </div>    
@@ -80,6 +93,10 @@ const ProductsList = () => {
         return data;
     }
     const [B_sidebar, setB_sidebar] = useState(false);
+
+    const deleteProductHandler = (id) => {
+        dispatch(deleteProduct(id));
+    }
 
 
   return (

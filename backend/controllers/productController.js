@@ -120,7 +120,7 @@ exports.updateProduct = catchAsyncErrors(async (req,res,next) => {
     })
 })
 
-//Delete product => /api/vi/admin/products/:id
+//Delete product => /api/vi/admin/product/:id
 
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
     try {
